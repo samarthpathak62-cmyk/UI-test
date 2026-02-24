@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neura Tech</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div id="home" class="view active">
+            <header>
+                <h1>NeuraOne AI</h1>
+                <i data-lucide="bell" id="bell-icon"></i>
+            </header>
+            
+            <div class="top-grid">
+                <div class="neon-card" data-target="chat">
+                    <div class="card-content"><i data-lucide="message-square"></i><span>Chat</span></div>
+                </div>
+                <div class="neon-card" data-target="imggen">
+                    <div class="card-content"><i data-lucide="image"></i><span>Image Gen</span></div>
+                </div>
+            </div>
+
+            <div class="visuals">
+                <div class="main-img" style="background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=400')"></div>
+                <div class="stack">
+                    <div class="sub-img" style="background-image: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=400')"></div>
+                    <div class="sub-img" style="background-image: url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400')"></div>
+                </div>
+            </div>
+
+            <span class="section-label">Community Explore</span>
+            <div class="explore-grid">
+                <div class="explore-item" data-image-name="Space City" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83421e2b9c9?w=300')"></div>
+                <div class="explore-item" data-image-name="Neon Cyber" style="background-image: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=300')"></div>
+                <div class="explore-item" data-image-name="Abstract AI" style="background-image: url('https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=300')"></div>
+                <div class="explore-item" data-image-name="Future Port" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=300')"></div>
+            </div>
+        </div>
+
+        <div id="chat" class="view">
+            <header><i data-lucide="chevron-left" class="back-btn" data-target="home"></i><h1>Chat AI</h1></header>
+            <div class="chat-container">
+                <div class="chat-box" id="chatBox">
+                    <div class="bubble bot">Your Chat and File is Ready</div>
+                </div>
+                <div class="chat-input-row">
+                    <input type="file" id="file-input" class="hidden-file-input">
+                    <i data-lucide="paperclip" class="icon-btn" id="attach-file-btn"></i>
+                    <input type="text" id="chatInput" placeholder="Ask Something...">
+                    <i data-lucide="send" class="icon-btn" id="send-msg-btn"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="tools" class="view">
+            <header><h1>All Tools</h1></header>
+            <div class="tool-item" data-action="video"><i data-lucide="video"></i> <span>Video AI Generator</span></div>
+            <div class="tool-item" data-action="code"><i data-lucide="code"></i> <span>Pro Code Genius</span></div>
+            <div class="tool-item" data-action="voice"><i data-lucide="mic"></i> <span>Voice Clone Tool</span></div>
+            <div class="tool-item" data-action="pdf"><i data-lucide="file-text"></i> <span>PDF Data Bot</span></div>
+        </div>
+
+        <div id="imggen" class="view">
+            <header><i data-lucide="chevron-left" class="back-btn" data-target="home"></i><h1>Image Studio</h1></header>
+            <div class="image-gen-section">
+                <textarea id="imagePrompt" placeholder="Imagine something amazing!"></textarea>
+                <div class="image-gen-controls">
+                    <input type="file" id="image-file-input" class="hidden-file-input" accept="image/*">
+                    <i data-lucide="paperclip" class="icon-btn" id="attach-image-btn"></i>
+                    <button class="gen-btn" id="generate-image-btn">Generate</button>
+                </div>
+                
+                <span class="section-label" style="margin-top: 30px;">Inspiration Gallery</span>
+                <div class="explore-grid">
+                    <div class="explore-item" data-image-name="Futuristic City" style="background-image: url('https://images.unsplash.com/photo-1698246411516-0428d0966a4b?w=300')"></div>
+                    <div class="explore-item" data-image-name="Fantasy Creature" style="background-image: url('https://images.unsplash.com/photo-1698305001556-9a572a6b2507?w=300')"></div>
+                    <div class="explore-item" data-image-name="Sci-Fi Landscape" style="background-image: url('https://images.unsplash.com/photo-1698188151474-9b2f3d67f339?w=300')"></div>
+                    <div class="explore-item" data-image-name="Abstract Art" style="background-image: url('https://images.unsplash.com/photo-1698308479203-b56556e5f8ce?w=300')"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="me" class="view">
+            <header><h1>Profile</h1></header>
+            <div class="profile-card">
+                <div class="profile-info">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=BhaiUser" class="avatar">
+                    <div>
+                        <h2>Cyber</h2>
+                        <p>Premium Member</p>
+                    </div>
+                </div>
+                <p class="section-label">ACTIVE THEME</p>
+                <select id="theme-select">
+                    <option value="blue">Neon Blue (Default)</option>
+                    <option value="pink">Cosmic Pink</option>
+                    <option value="green">Cyber Green</option>
+                </select>
+                <button class="btn-primary" id="save-settings-btn">Apply Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item active" data-target="home"><i data-lucide="home"></i>Home</div>
+        <div class="nav-item" data-target="chat"><i data-lucide="message-square"></i>Chat</div>
+        <div class="nav-item" data-target="tools"><i data-lucide="layout-grid"></i>Tools</div>
+        <div class="nav-item" data-target="me"><i data-lucide="user"></i>Me</div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js"></script>
+</body>
+</html>
